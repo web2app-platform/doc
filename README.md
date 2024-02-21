@@ -25,7 +25,7 @@ fetch(url)
 {
     "ok": true,     // true为成功，false为失败
     "reason": "ok", // 失败时会给出原因
-    "message": "Endpoint timeout." // 如何api gateway超时，会没有以上两条数据而只有这一条。
+    "message": "Endpoint timeout." // 如果api gateway超时，会没有以上两条数据而只有这一条。
 }
 ```
 
