@@ -36,3 +36,18 @@ fetch(url)
 window.location.href = `https://ad.web2app.co/download?apk=${apk_name}&url=${encodeURIComponent(window.location.href)}`
 ```
 来下载集成对应adinfo的包，安装后便可根据adinfo做广告归因了
+
+## 新版firebase的处理办法
+如果落地页是按照新版firebase的module方式集成，需要做如下处理
+```js
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
+import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
+
+const firebaseConfig = {...};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app); 
+window.firebaseLogEvent = function (event, data) { logEvent(analytics, event, data) }
+</script>
+```
