@@ -42,7 +42,7 @@ window.location.href = `https://ad.web2app.co/download?apk=${apk_name}&url=${enc
 ```js
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js'
-import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
+import { getAnalytics, logEvent /* 注意加上logEvent，google给的代码片段没有 */ } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js'
 
 const firebaseConfig = {...};
 
